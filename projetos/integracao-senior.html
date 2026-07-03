@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integração Senior</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   BASE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0f;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* fundo grid */
+.bg-grid {
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: -2;
+}
+
+/* gradientes */
+.gradient {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    filter: blur(120px);
+    opacity: 0.25;
+    z-index: -1;
+}
+
+.gradient.one {
+    background: #7c3aed;
+    top: -200px;
+    left: -200px;
+}
+
+.gradient.two {
+    background: #06b6d4;
+    bottom: -200px;
+    right: -200px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    padding: 20px 60px;
+    backdrop-filter: blur(20px);
+    background: rgba(10,10,15,0.6);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: #7c3aed;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    padding: 100px 60px 60px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(124,58,237,0.15);
+    border: 1px solid rgba(124,58,237,0.4);
+    color: #a78bfa;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #06b6d4;
+}
+
+.hero p {
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    max-width: 600px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-primary {
+    padding: 12px 18px;
+    border-radius: 10px;
+    background: #7c3aed;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-secondary {
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* FLOW PREVIEW */
+.flow-preview {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 25px;
+    backdrop-filter: blur(15px);
+}
+
+.flow-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.step {
+    padding: 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* =========================
+   FLOW SECTION
+========================= */
+
+.flow-section{
+    padding: 100px 60px;
+}
+
+.section-title{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title span{
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #a78bfa;
+}
+
+.section-title h2{
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+.section-title p{
+    max-width: 700px;
+    margin: 15px auto 0;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+}
+
+.flow-diagram{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.flow-node{
+    width: 220px;
+    padding: 22px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.flow-node.highlight{
+    border-color: rgba(124,58,237,0.4);
+}
+
+.arrow{
+    font-size: 22px;
+    color: rgba(167,139,250,0.8);
+}
+
+/* =========================
+   TECH / STATUS / LOGS
+========================= */
+
+.tech-section{ padding: 100px 60px; }
+
+.tech-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.tech-card{
+    padding: 25px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.status-section{
+    padding: 80px 60px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 30px;
+}
+
+.status-card, .log-card{
+    padding: 25px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* =========================
+   ALERT / IMPACT
+========================= */
+
+.alert-section,
+.impact-section{
+    padding: 100px 60px;
+}
+
+/* =========================
+   NAVIGATION (ADICIONADO)
+========================= */
+
+.project-navigation{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 80px 60px;
+}
+
+.nav-project{
+    flex: 1;
+    padding: 25px;
+    border-radius: 16px;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.3s;
+}
+
+.nav-project:hover{
+    border-color: #06b6d4;
+    transform: translateY(-5px);
+}
+
+/* =========================
+   CTA (ADICIONADO)
+========================= */
+
+.project-cta{
+    text-align: center;
+    padding: 100px 60px;
+}
+
+.project-cta h2{
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.project-cta p{
+    color: rgba(255,255,255,0.7);
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding: 60px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    background: rgba(10,10,15,0.8);
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-links a{
+    color: rgba(255,255,255,0.7);
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.footer-copy{
+    margin-top: 30px;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+}
+
+/* SCROLL TOP */
+#scrollTop{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: #7c3aed;
+    color: #fff;
+    cursor: pointer;
+}
+
+.flow-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-top:50px;
+}
+
+.flow-line{
+    width:40px;
+    height:2px;
+    background: linear-gradient(90deg, transparent, #7c3aed, transparent);
+    animation: pulseLine 1.5s infinite;
+}
+
+@keyframes pulseLine{
+    0%,100%{opacity:0.3;}
+    50%{opacity:1;}
+}
+
+.pipeline-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:50px;
+}
+
+.pipeline-step{
+    padding:12px 18px;
+    border-radius:12px;
+    background: rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    font-size:13px;
+}
+
+.pipeline-arrow{
+    color:#a78bfa;
+}
+
+.pipeline-step.highlight{
+    border-color:#06b6d4;
+    box-shadow:0 0 20px rgba(6,182,212,0.2);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg-grid"></div>
+<div class="gradient one"></div>
+<div class="gradient two"></div>
+
+<header>
+    <nav>
+        <div class="logo">SENIOR INTEGRAÇÃO</div>
+        <a href="../index.html">Voltar ao Portfólio</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero">
+    <div>
+        <div class="badge">SISTEMA DE INTEGRAÇÃO</div>
+
+        <h1>Integração com <span>ERP Senior</span></h1>
+
+        <p>Sistema responsável pela sincronização automática de colaboradores entre ERP e hospital.</p>
+
+        <div class="buttons">
+            <a class="btn-primary" href="#fluxo">Ver Fluxo</a>
+            <a class="btn-secondary" href="#logs">Logs</a>
+        </div>
+    </div>
+
+    <div class="flow-preview">
+        <div class="flow-box">
+            <div class="step">Coleta no Senior</div>
+            <div class="step">Processamento Python</div>
+            <div class="step">Validação</div>
+            <div class="step">WACESSO</div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FLOW SECTION ================= -->
+
+<section class="flow-section" id="fluxo">
+
+    <div class="section-title">
+        <span>ARQUITETURA DO SISTEMA</span>
+        <h2>Pipeline de Integração Senior</h2>
+        <p>
+            Fluxo automatizado de extração, processamento e sincronização de dados entre ERP Senior
+            e o sistema hospitalar WACESSO, garantindo consistência e integridade em tempo real.
+        </p>
+    </div>
+
+    <div class="flow-container">
+
+        <div class="flow-node">
+            <div class="icon">📡</div>
+            <h3>ERP Senior</h3>
+            <p>Origem central dos dados de colaboradores</p>
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-node">
+            <div class="icon">🐍</div>
+            <h3>Engine Python</h3>
+            <p>Consumo SOAP + regras de extração inteligente</p>
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-node">
+            <div class="icon">⚙️</div>
+            <h3>Data Processing Layer</h3>
+            <p>Validação, normalização e aplicação de regras de negócio</p>
+        </div>
+
+        <div class="flow-line"></div>
+
+        <div class="flow-node highlight">
+            <div class="icon">🗄️</div>
+            <h3>SQL Server (WACESSO)</h3>
+            <p>Persistência e sincronização final dos dados</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= TECH SECTION ================= -->
+
+<section class="tech-section">
+
+    <div class="section-title">
+        <span>ENGENHARIA DE DADOS</span>
+        <h2>Camada de Processamento</h2>
+        <p>
+            Implementação baseada em Python para integração robusta com sistemas legados e banco de dados.
+        </p>
+    </div>
+
+    <div class="tech-grid">
+
+        <div class="tech-card">
+            <h3>🔗 Integração SOAP</h3>
+            <p>Consumo do ERP Senior via WebService com autenticação e controle de sessão.</p>
+        </div>
+
+        <div class="tech-card">
+            <h3>🧠 Engine de Validação</h3>
+            <p>Normalização de dados e aplicação de regras de consistência automatizadas.</p>
+        </div>
+
+        <div class="tech-card">
+            <h3>⚡ Performance DB</h3>
+            <p>Insert/Update em lote no SQL Server com otimização de escrita.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATUS ================= -->
+
+<section class="status-section">
+
+    <div class="status-card">
+
+        <div class="status-header">
+            <h2>📊 Health Check da Integração</h2>
+            <span class="status ok">ONLINE</span>
+        </div>
+
+        <div class="status-grid">
+
+            <div class="status-item">
+                <h3>Última execução</h3>
+                <p>03/07/2026 10:45</p>
+            </div>
+
+            <div class="status-item">
+                <h3>Volume processado</h3>
+                <p>1.248 colaboradores</p>
+            </div>
+
+            <div class="status-item">
+                <h3>Falhas</h3>
+                <p>0 críticas</p>
+            </div>
+
+            <div class="status-item">
+                <h3>Latência média</h3>
+                <p>4.2s</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="log-card">
+
+        <h2>📜 Event Stream</h2>
+
+        <div class="log">✔ Pipeline executado com sucesso</div>
+        <div class="log">✔ 1.248 registros sincronizados</div>
+        <div class="log">⚠ Timeout tratado com retry automático</div>
+        <div class="log">✔ Commit final aplicado no SQL Server</div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ALERT / PIPELINE ================= -->
+
+<section class="alert-section">
+
+    <div class="section-title">
+        <span>AUTOMAÇÃO</span>
+        <h2>Execução do Pipeline</h2>
+        <p>Processo totalmente automatizado com execução agendada em Python.</p>
+    </div>
+
+    <div class="pipeline-box">
+
+        <div class="pipeline-step">Scheduler</div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">Python Engine</div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">SOAP API</div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">Processing Layer</div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step highlight">SQL Server</div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= IMPACT ================= -->
+
+<section class="impact-section">
+
+    <div class="section-title">
+        <span>RESULTADO OPERACIONAL</span>
+        <h2>Impacto da Automação</h2>
+        <p>Melhoria significativa na confiabilidade e eficiência do ambiente hospitalar.</p>
+    </div>
+
+    <div class="tech-grid">
+
+        <div class="tech-card">
+            <h3>⚡ Automação Total</h3>
+            <p>Eliminação de processos manuais de sincronização</p>
+        </div>
+
+        <div class="tech-card">
+            <h3>🧠 Integridade</h3>
+            <p>Dados consistentes entre todos os sistemas</p>
+        </div>
+
+        <div class="tech-card">
+            <h3>⏱️ Performance</h3>
+            <p>Execução otimizada com baixo impacto no banco</p>
+        </div>
+
+        <div class="tech-card">
+            <h3>🏥 Infraestrutura</h3>
+            <p>Suporte direto ao controle de acesso hospitalar</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="project-navigation">
+
+    <a href="monitoramento-ativos.html" class="nav-project prev" target="_blank">
+        <span>Projeto Anterior</span>
+        <h3>Monitoramento de Ativos</h3>
+    </a>
+
+    <a href="passagem-plantao.html" class="nav-project next" target="_blank">
+        <span>Próximo Projeto</span>
+        <h3>Passagem de Plantão</h3>
+    </a>
+
+</section>
+
+<section class="project-cta">
+
+    <h2>Gostou deste sistema?</h2>
+
+    <p>Esse projeto faz parte da infraestrutura hospitalar desenvolvida.</p>
+
+    <div class="buttons">
+        <a href="../index.html#projects" class="btn-primary">Ver projetos</a>
+        <a href="../index.html#contact" class="btn-secondary">Contato</a>
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <h2>Marcos Vinicius</h2>
+            <p>Analista de Sistemas • Full Stack</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#projects">Projetos</a>
+            <a href="../index.html#contact">Contato</a>
+        </div>
+
+    </div>
+
+    <div class="footer-copy">
+        © 2026 Marcos Vinicius da Silva Aleixo
+    </div>
+
+</footer>
+
+<button id="scrollTop">↑</button>
+
+</body>
+</html>

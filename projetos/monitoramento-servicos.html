@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Monitoramento de Serviços | Marcos Vinicius</title>
+
+    <meta name="description"
+        content="Sistema de Monitoramento de Serviços hospitalares desenvolvido por Marcos Vinicius">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style-projeto.css">
+
+</head>
+
+<body>
+
+<div class="bg-grid"></div>
+<div class="gradient one"></div>
+<div class="gradient two"></div>
+
+<div id="cursor"></div>
+
+<header>
+
+    <nav>
+
+        <ul>
+            <li>
+                <a href="../index.html">
+                    <i class="ri-arrow-left-line"></i>
+                    Voltar ao Portfólio
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+
+<section class="project-hero">
+
+    <div class="project-hero-left">
+
+        <span class="badge">SISTEMA DE INFRAESTRUTURA</span>
+
+        <h1>Monitoramento de Serviços</h1>
+
+        <p>
+            Plataforma de monitoramento em tempo real voltada à supervisão de serviços críticos hospitalares e sistemas de Prontuário Eletrônico (PEP). O sistema assegura a disponibilidade da infraestrutura ao monitorar continuamente status, latência (ms) e uptime de APIs, servidores e bancos de dados, possibilitando a detecção proativa de falhas e mitigação de indisponibilidades que possam impactar o atendimento.
+        </p>
+
+        <div class="project-tech">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>SQL Server</span>
+            <span>Monitoramento</span>
+            <span>Infraestrutura</span>
+        </div>
+
+        <div class="hero-buttons">
+
+            <a href="#galeria" class="btn-primary">Ver Sistema</a>
+            <a href="monitoramento-ativos.html" class="btn-secondary">Voltar</a>
+
+        </div>
+
+    </div>
+
+    <div class="project-hero-right">
+
+        <div class="glass-card">
+
+            <img src="../assets/img/servicos/capa.png" alt="Monitoramento de Serviços">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= VISÃO GERAL ================= -->
+
+<section class="project-overview">
+
+    <div class="title">
+        <span>VISÃO GERAL</span>
+        <h2>Sobre o Sistema</h2>
+        <p>
+            Este sistema centraliza o monitoramento de serviços críticos,
+            permitindo identificar falhas antes que impactem os usuários finais.
+        </p>
+    </div>
+
+    <div class="overview-grid">
+
+        <div class="overview-card">
+            <i class="ri-target-line"></i>
+            <h3>Objetivo</h3>
+            <p>Garantir disponibilidade dos serviços hospitalares em tempo real.</p>
+        </div>
+
+        <div class="overview-card">
+            <i class="ri-error-warning-line"></i>
+            <h3>Problema</h3>
+            <p>Falhas eram detectadas somente quando usuários reclamavam.</p>
+        </div>
+
+        <div class="overview-card">
+            <i class="ri-lightbulb-line"></i>
+            <h3>Solução</h3>
+            <p>Monitoramento automatizado com alertas e status centralizado.</p>
+        </div>
+
+        <div class="overview-card">
+            <i class="ri-line-chart-line"></i>
+            <h3>Resultado</h3>
+            <p>Redução drástica no tempo de resposta de incidentes.</p>
+        </div>
+
+        <div class="overview-card">
+
+    <i class="ri-telegram-line"></i>
+
+    <h3>Alertas via Telegram</h3>
+
+    <p>
+
+        O sistema envia notificações automáticas via Telegram
+        sempre que um serviço ou equipamento fica indisponível,
+        permitindo resposta rápida da equipe de TI.
+
+    </p>
+
+</div>
+
+    </div>
+
+</section>
+
+<!-- ================= GALERIA ================= -->
+
+<section class="project-gallery" id="galeria">
+
+    <div class="title">
+        <span>GALERIA</span>
+        <h2>Interface do Sistema</h2>
+        <p>Principais telas do sistema de monitoramento de serviços.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-card">
+            <img src="../assets/img/servicos/dashboard.png" alt="Dashboard Serviços">
+            <div class="gallery-info">
+                <h3>Dashboard</h3>
+                <p>Visão geral centralizada e em tempo real do ecossistema de serviços, exibindo de forma clara a quantidade total de serviços operantes, falhas ativas e alertas críticos.</p>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img src="../assets/img/servicos/apis.png" alt="APIs">
+            <div class="gallery-info">
+                <h3>APIs</h3>
+                <p>Módulo focado no monitoramento de integridade (Health Check), controlando o Uptime das últimas 24h, tempo de resposta em milissegundos e apresentando gráficos de latência e consumo de recursos de rede e o status de comunicação dos endpoints.</p>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img src="../assets/img/servicos/banco.png" alt="Banco de Dados">
+            <div class="gallery-info">
+                <h3>Banco de Dados & Servidores</h3>
+                <p>Interface focada no monitoramento contínuo de endpoints e serviços integrados. O painel consolida dados de integridade, calcula a taxa de Uptime histórico e mede o tempo de resposta de cada serviço individualmente, permitindo uma análise preditiva de gargalos de infraestrutura e otimização de performance.</p>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img src="../assets/img/servicos/logs.png" alt="Logs">
+            <div class="gallery-info">
+                <h3>Logs</h3>
+                <p>Histórico cronológico e centralizado de eventos do sistema, registrando quedas, oscilações e retornos de serviços com foco em auditoria e rápida resolução de incidentes.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FLUXO ================= -->
+
+<section class="project-flow">
+
+    <div class="title">
+        <span>ARQUITETURA</span>
+        <h2>Como Funciona</h2>
+        <p>Fluxo de monitoramento dos serviços críticos.</p>
+    </div>
+
+    <div class="flow-container">
+
+        <div class="flow-box">
+            <i class="ri-server-line"></i>
+            <h3>Serviços</h3>
+            <p>APIs, sistemas e bancos monitorados.</p>
+        </div>
+
+        <div class="flow-arrow"><i class="ri-arrow-right-line"></i></div>
+
+        <div class="flow-box">
+            <i class="ri-radar-line"></i>
+            <h3>Verificação</h3>
+            <p>Checagem automática de status.</p>
+        </div>
+
+        <div class="flow-arrow"><i class="ri-arrow-right-line"></i></div>
+
+        <div class="flow-box">
+            <i class="ri-notification-3-line"></i>
+            <h3>Alertas</h3>
+            <p>Notificação de falhas em tempo real.</p>
+        </div>
+
+        <div class="flow-arrow"><i class="ri-arrow-right-line"></i></div>
+
+        <div class="flow-box">
+            <i class="ri-dashboard-3-line"></i>
+            <h3>Dashboard</h3>
+            <p>Visualização centralizada dos serviços.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= DESAFIOS ================= -->
+
+<section class="project-challenges">
+
+    <div class="title">
+        <span>ENGENHARIA</span>
+        <h2>Desafios</h2>
+        <p>Principais problemas resolvidos no sistema.</p>
+    </div>
+ 
+    <div class="challenge-list">
+
+        <div class="challenge-card">
+            <div class="challenge-number">01</div>
+            <div>
+                <h3>Detecção em tempo real</h3>
+                <p>Monitoramento contínuo sem impacto no desempenho.</p>
+            </div>
+        </div>
+
+        <div class="challenge-card">
+            <div class="challenge-number">02</div>
+            <div>
+                <h3>Alta disponibilidade</h3>
+                <p>Garantir estabilidade dos serviços críticos.</p>
+            </div>
+        </div>
+
+        <div class="challenge-card">
+            <div class="challenge-number">03</div>
+            <div>
+                <h3>Integração com banco</h3>
+                <p>Conexão com SQL Server e validação de status.</p>
+            </div>
+        </div>
+
+        <div class="challenge-card">
+            <div class="challenge-number">04</div>
+            <div>
+                <h3>Escalabilidade</h3>
+                <p>Arquitetura preparada para crescimento do hospital.</p>
+            </div>
+
+        
+        </div>
+<div class="challenge-card">
+
+    <div class="challenge-number">
+        05
+    </div>
+
+    <div>
+
+        <h3>Alertas em tempo real</h3>
+
+        <p>
+
+            Implementei integração com a API do Telegram para envio
+            de mensagens automáticas quando um serviço crítico
+            apresenta falha ou fica indisponível.
+
+        </p>
+
+    </div>
+
+</div>
+    </div>
+
+</section>
+
+<!-- ================= NAV ================= -->
+
+<section class="project-navigation">
+
+    <a href="monitoramento-ativos.html" class="nav-project prev" target="_blank">
+        <span>Projeto Anterior</span>
+        <h3><i class="ri-arrow-left-line"></i> Monitoramento de Ativos</h3>
+    </a>
+
+    <a href="passagem-plantao.html" class="nav-project next" target="_blank">
+        <span>Próximo Projeto</span>
+        <h3>Passagem de Plantão <i class="ri-arrow-right-line"></i></h3>
+    </a>
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="project-cta">
+
+    <h2>Gostou deste sistema?</h2>
+
+    <p>
+        Esse projeto faz parte da infraestrutura hospitalar que desenvolvi
+        para monitoramento e automação de serviços críticos.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="../index.html#projects" class="btn-primary">Ver projetos</a>
+        <a href="../index.html#contact" class="btn-secondary">Contato</a>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <h2>Marcos Vinicius</h2>
+
+            <p>
+                Analista de Sistemas • Desenvolvedor Full Stack
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="../index.html">Home</a>
+
+            <a href="../index.html#projects">Projetos</a>
+
+            <a href="../index.html#contact">Contato</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-copy">
+
+        © 2026 Marcos Vinicius da Silva Aleixo
+
+    </div>
+
+</footer>
+
+<button id="scrollTop">
+
+    <i class="ri-arrow-up-line"></i>
+
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
