@@ -50,7 +50,6 @@ if (typing) {
 
     const texts = [
         "Analista de Sistemas",
-        "Desenvolvedor Full Stack",
         "Automação em Python",
         "Infraestrutura de TI"
     ];
