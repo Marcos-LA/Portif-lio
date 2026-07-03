@@ -821,16 +821,9 @@ STATS
 /* =====================================================
 ABOUT
 ===================================================== */
-
 .about{
 
-    display:grid;
-
-    grid-template-columns:1.2fr .8fr;
-
-    gap:70px;
-
-    align-items:center;
+    padding: 120px 0;
 
 }
 
@@ -838,11 +831,21 @@ ABOUT
 
     display:grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1.2fr .8fr;
 
-    gap:60px;
+    gap:70px;
 
-    align-items:center;
+    align-items:start;
+
+}
+
+.about-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
 
 }
 
@@ -850,11 +853,23 @@ ABOUT
 
     color:var(--text);
 
-    line-height:2;
+    line-height:1.9;
 
-    margin-bottom:25px;
+    margin-bottom:22px;
 
     font-size:1.05rem;
+
+}
+
+.terminal{
+
+    width:100%;
+
+    max-width:520px;
+
+    margin-left:auto;
+
+    align-self:start;
 
 }
 
